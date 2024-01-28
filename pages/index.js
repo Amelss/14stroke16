@@ -24,7 +24,6 @@ export default function Home({articles}) {
   console.log("fetched articles:", articles);
   return (
     <div>
-      <h1 className="text-pink-500">Hello</h1>
       <div>
         {articles.map((article) => (
           <HomepageArticle key={article.sys.id} article={article} />
