@@ -25,7 +25,7 @@ export default function Home({articles}) {
   return (
     <div>
       <div>
-        {articles.map((article) => (
+        {articles.slice(0,1).map((article) => (
           <HomepageArticle key={article.sys.id} article={article} />
         ))}
       </div>

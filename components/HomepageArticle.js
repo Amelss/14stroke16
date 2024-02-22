@@ -23,7 +23,7 @@ export default function HomepageArticle({ article }) {
 
   return (
     <div>
-      <div className="bg-green-400">
+      <div className="bg-white">
         <div>
           <Image
             src={`https:${thumbnail.fields.file.url}`}
@@ -33,11 +33,11 @@ export default function HomepageArticle({ article }) {
           />
         </div>
         <div>{thumbnailAltTag}</div>
-        <div className="bg-pink-300">
+        <div className="">
           <h3>{title}</h3>
           {/* content  */}
         </div>
-        <div className="bg-fuchsia-600">
+        <div className="">
           <div>
             <p>{author}</p>
           </div>
