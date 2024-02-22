@@ -23,7 +23,7 @@ export default function HomepageArticle({ article }) {
 
   return (
     <div>
-      <div className="bg-white">
+      <div className="bg-white font-sans">
         <div>
           <Image
             src={`https:${thumbnail.fields.file.url}`}
