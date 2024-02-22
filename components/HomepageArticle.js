@@ -42,7 +42,7 @@ export default function HomepageArticle({ article }) {
               </h3>
               <div className="rich-text">{documentToReactComponents(section1Text)}</div>
 
-              <div className="flex justify-between ">
+              <div className="flex justify-between mt-10 ">
                 <div>
                   <p>{author}</p>
                 </div>
