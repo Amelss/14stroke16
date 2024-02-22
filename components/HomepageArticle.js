@@ -40,9 +40,11 @@ export default function HomepageArticle({ article }) {
               <h3 className="text-4xl md:text-6xl font-bold text-center my-4 md:mt-0">
                 {title}
               </h3>
-              <div className="rich-text">{documentToReactComponents(section1Text)}</div>
+              <div className="rich-text">
+                {documentToReactComponents(section1Text)}
+              </div>
 
-              <div className="flex justify-between mt-10 ">
+              <div className="flex justify-between align-bottom mt-10">
                 <div>
                   <p>{author}</p>
                 </div>

@@ -11,3 +11,7 @@ p {
 .rich-text{
  white-space: pre-wrap;
 }
+
+.align-bottom {
+  align-items: flex-end;
+}
