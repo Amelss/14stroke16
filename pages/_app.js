@@ -46,7 +46,7 @@ const einaFont = localFont({
 
 export default function App({ Component, pageProps }) {
   return (
-  <main className={`${einaFont.variable} font-sans`}>
+  <main className={`${einaFont.variable} font-sans bg-white`}>
 
       <Layout>
          <Component {...pageProps} />

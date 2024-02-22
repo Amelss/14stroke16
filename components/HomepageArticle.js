@@ -6,66 +6,89 @@ export default function HomepageArticle({ article }) {
   const {
     title,
     readTime,
-    thumbnail,
-    thumbnailAltTag,
     author,
     articlePublishedDate,
+    featuredImage,
+    featuredImageAltTag,
     section1Text,
-    section1Image,
     section2Text,
     section2Image,
+    section2ImageAltTag,
     section3Text,
     section3Image,
+    section3ImageAltTag,
     section4Text,
     section4Image,
+    section4ImageAltTag,
+    additionalText,
+    additionalImages,
   } = article.fields;
 
-
   return (
-    <div>
-      <div className="bg-white font-sans">
-        <div>
-          <Image
-            src={`https:${thumbnail.fields.file.url}`}
-            width={300}
-            height={300}
-            alt={thumbnailAltTag}
-          />
-        </div>
-        <div>{thumbnailAltTag}</div>
+    <div className="px-3 md:px-0 md:max-w-[1200px] mx-auto my-10">
+      <div>
         <div className="">
-          <h3>{title}</h3>
-          {/* content  */}
-        </div>
-        <div className="">
-          <div>
-            <p>{author}</p>
-          </div>
-          <div>
-            <p>{articlePublishedDate}</p>
+          <div className="grid-layout">
+            <Image
+              src={`https:${featuredImage.fields.file.url}`}
+              width={600}
+              height={600}
+              alt={featuredImageAltTag}
+            />
+
+            <div className="">
+              <h3 className="text-4xl md:text-6xl font-bold text-center my-4 md:mt-0">
+                {title}
+              </h3>
+              <div className="">{documentToReactComponents(section1Text)}</div>
+
+              <div className="flex justify-between ">
+                <div>
+                  <p>{author}</p>
+                </div>
+                <div>
+                  <p>{articlePublishedDate}</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div>
+        <div className="grid-layout">
           <div>
             <Image
-              src={`https:${section1Image.fields.file.url}`}
-              width={300}
-              height={300}
-              alt={thumbnailAltTag}
+              src={`https:${section2Image.fields.file.url}`}
+              width={600}
+              height={600}
+              alt={section2ImageAltTag}
+            />
+          </div>
+          <div>{documentToReactComponents(section2Text)}</div>
+        </div>
+
+        <div className="grid-layout">
+          <div>{documentToReactComponents(section3Text)}</div>
+          <div>
+            <Image
+              src={`https:${section3Image.fields.file.url}`}
+              width={600}
+              height={600}
+              alt={section3ImageAltTag}
             />
           </div>
         </div>
-        <div>{documentToReactComponents(section1Text)}</div>
-        <div>
-          <Image
-            src={`https:${section2Image.fields.file.url}`}
-            width={300}
-            height={300}
-            alt={thumbnailAltTag}
-          />
+
+        <div className="grid-layout">
+          <div>
+            <Image
+              src={`https:${section4Image.fields.file.url}`}
+              width={600}
+              height={600}
+              alt={section4ImageAltTag}
+            />
+          </div>
+          <div>{documentToReactComponents(section4Text)}</div>
         </div>
-        <div>{documentToReactComponents(section2Text)}</div>
       </div>
     </div>
   );

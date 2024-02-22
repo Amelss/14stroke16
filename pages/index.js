@@ -21,7 +21,7 @@ export async function getStaticProps() {
 }
   
 export default function Home({articles}) {
-  console.log("fetched articles:", articles);
+
   return (
     <div>
       <div>
