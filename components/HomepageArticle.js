@@ -18,7 +18,7 @@ export default function HomepageArticle({ article }) {
     section3Image,
     section3ImageAltTag,
     section4Text,
-    section4Image,
+    section4aImage,
     section4ImageAltTag,
     additionalText,
     additionalImages,
@@ -79,17 +79,17 @@ export default function HomepageArticle({ article }) {
             />
           </div>
         </div>
-
         <div className="grid-layout">
+          
           <div>
             <Image
-              src={`https:${section4Image.fields.file.url}`}
+              src={`https:${section4aImage.fields.file.url}`}
               width={600}
               height={600}
               alt={section4ImageAltTag}
             />
           </div>
-          <div>{documentToReactComponents(section4Text)}</div>
+          <div>{documentToReactComponents(section3Text)}</div>
         </div>
       </div>
     </div>
