@@ -63,7 +63,7 @@ export default function Slug({ article }) {
   } = article.fields;
 
   return (
-    <div className="px-3 md:px-0 md:max-w-[1200px] mx-auto my-10">
+    <div className="px-5 md:px-0 md:max-w-[1200px] mx-auto my-10">
       <div>
         <div className="">
           <div className="grid-layout">
