@@ -6,6 +6,7 @@ export default function HomepageArticle({ article }) {
   const {
     title,
     readTime,
+    slug,
     author,
     articlePublishedDate,
     featuredImage,
@@ -37,9 +38,11 @@ export default function HomepageArticle({ article }) {
             />
 
             <div className="">
-              <h3 className="text-4xl md:text-6xl font-bold text-center mb-4 md:mt-0">
-                {title}
-              </h3>
+              <Link href={`/articles/${slug}`}>
+                <h3 className="text-4xl md:text-6xl font-bold text-center mb-4 md:mt-0">
+                  {title}
+                </h3>
+              </Link>
               <div className="rich-text">
                 {documentToReactComponents(section1Text)}
               </div>
@@ -79,18 +82,19 @@ export default function HomepageArticle({ article }) {
             />
           </div>
         </div>
-        <div className="grid-layout">
-          
-          <div>
-            <Image
-              src={`https:${section4aImage.fields.file.url}`}
-              width={600}
-              height={600}
-              alt={section4ImageAltTag}
-            />
+        {section4aImage && (
+          <div className="grid-layout">
+            <div>
+              <Image
+                src={`https:${section4aImage.fields.file.url}`}
+                width={600}
+                height={600}
+                alt={section4ImageAltTag}
+              />
+            </div>
+            <div>{documentToReactComponents(section4Text)}</div>
           </div>
-          <div>{documentToReactComponents(section3Text)}</div>
-        </div>
+        )}
       </div>
     </div>
   );
