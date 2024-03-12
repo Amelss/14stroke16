@@ -1,5 +1,6 @@
 import { createClient } from "contentful";
 import ArticleCard from "@/components/ArticleCard";
+import MasonryGrid from "@/components/MasonryGrid";
 
 
 
@@ -21,14 +22,16 @@ export async function getStaticProps() {
 }
 
 export default function viewAll({articles}) {
-  return (
-    <div>
-      <div className="grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 gap-4 my-10 px-5 2xl:items-center">
-        {articles.map((article) => (
-          <ArticleCard key={article.sys.id} article={article} />
-        ))}
+    return (
+      <div className="container mx-auto mt-10 px-3">
+        <MasonryGrid>
+          {articles.map((article) => (
+            <div key={article.sys.id} className="masonry-item">
+              <ArticleCard article={article} />
+            </div>
+          ))}
+        </MasonryGrid>
       </div>
-    </div>
-  );
+    );
   
 }

@@ -15,3 +15,14 @@ p {
 .align-bottom {
   align-items: flex-end;
 }
+
+/* styles/globals.css (or your preferred location) */
+.masonry-grid {
+  display: flex;
+  margin-left: -16px; /* Adjust margin as needed */
+}
+
+.masonry-grid_column {
+  padding-left: 16px; /* Adjust padding as needed */
+  background-clip: padding-box;
+}
