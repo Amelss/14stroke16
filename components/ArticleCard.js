@@ -23,7 +23,7 @@ export default function ArticleCard({ article }) {
               alt={thumbnailAltTag}
             />
 
-            <h3 className="text-sm md:text-md font-bold my-4 ">{title}</h3>
+            <h3 className="text-sm md:text-md font-bold my-4 uppercase">{title}</h3>
           </Link>
 
           <p className="text-sm md:text-md ">{excerpt}</p>

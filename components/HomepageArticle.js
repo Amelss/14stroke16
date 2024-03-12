@@ -39,20 +39,20 @@ export default function HomepageArticle({ article }) {
 
             <div className="">
               <Link href={`/articles/${slug}`}>
-                <h3 className="text-4xl md:text-6xl font-bold text-center mb-4 md:mt-0">
+                <h3 className="text-4xl md:text-6xl font-bold text-center mb-4 md:mt-0 uppercase">
                   {title}
                 </h3>
               </Link>
-              <div className="rich-text">
+              <div className="rich-text text-justify">
                 {documentToReactComponents(section1Text)}
               </div>
 
               <div className="flex justify-between align-bottom mt-10">
                 <div>
-                  <p>{author}</p>
+                  <p className="font-bold">{author}</p>
                 </div>
                 <div>
-                  <p>{articlePublishedDate}</p>
+                  <p className="font-bold">{articlePublishedDate}</p>
                 </div>
               </div>
             </div>
@@ -68,11 +68,15 @@ export default function HomepageArticle({ article }) {
               alt={section2ImageAltTag}
             />
           </div>
-          <div>{documentToReactComponents(section2Text)}</div>
+          <div className="text-justify">
+            {documentToReactComponents(section2Text)}
+          </div>
         </div>
 
         <div className="grid-layout">
-          <div>{documentToReactComponents(section3Text)}</div>
+          <div className="text-justify">
+            {documentToReactComponents(section3Text)}
+          </div>
           <div>
             <Image
               src={`https:${section3Image.fields.file.url}`}
@@ -92,7 +96,9 @@ export default function HomepageArticle({ article }) {
                 alt={section4ImageAltTag}
               />
             </div>
-            <div>{documentToReactComponents(section4Text)}</div>
+            <div className="text-justify">
+              {documentToReactComponents(section4Text)}
+            </div>
           </div>
         )}
       </div>
