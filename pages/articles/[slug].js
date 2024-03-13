@@ -145,7 +145,7 @@ export default function Slug({ article }) {
           </div>
         )}
 
-        <div className="text-justify text-3xl font-bold mb-4 mt-6">
+        <div className="text-center text-3xl font-bold mb-4 mt-6">
           {documentToReactComponents(quote)}
         </div>
 
@@ -181,7 +181,7 @@ export default function Slug({ article }) {
           </div>
         )}
 
-        <div className="text-justify text-3xl font-bold mb-4 mt-6">
+        <div className="text-center text-3xl font-bold mb-4 mt-6">
           {documentToReactComponents(secondQuote)}
         </div>
 
@@ -217,7 +217,7 @@ export default function Slug({ article }) {
           </div>
         )}
 
-        <div className="text-justify text-3xl font-bold mb-4 mt-6">
+        <div className="text-center text-3xl font-bold mb-4 mt-6">
           {documentToReactComponents(thirdQuote)}
         </div>
 
@@ -253,7 +253,7 @@ export default function Slug({ article }) {
           </div>
         )}
 
-        <div className="text-justify text-3xl font-bold mb-4 mt-6">
+        <div className="text-center text-3xl font-bold mb-4 mt-6">
           {documentToReactComponents(fourthQuote)}
         </div>
 
