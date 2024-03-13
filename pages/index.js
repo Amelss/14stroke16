@@ -14,10 +14,11 @@ export async function getStaticProps() {
     });
 
    return {
-    props: {
-      articles: res.items
-    }
-  }
+     props: {
+       articles: res.items,
+     },
+     revalidate: 10,
+   };
   
 }
   
