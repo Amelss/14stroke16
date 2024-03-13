@@ -70,8 +70,28 @@ export default function Slug({ article }) {
     section4Text,
     section4aImage,
     section4ImageAltTag,
-    additionalText,
-    additionalImages,
+    section5Image,
+    section5altTag,
+    section5Text,
+    section6Image,
+    section6AltTag,
+    section6Text,
+    section7Image,
+    section7ImageAltTag,
+    section7Text,
+    section8Image,
+    section8ImageAltTag,
+    section8Text,
+    section9Image,
+    section9ImageAltTag,
+    section9Text,
+    section10Image,
+    section10ImageAltTag,
+    section10Text,
+    quote,
+    secondQuote,
+    thirdQuote,
+    fourthQuote,
   } = article.fields;
 
   return (
@@ -109,7 +129,6 @@ export default function Slug({ article }) {
           </div>
         </div>
 
-       
         {section2Image && (
           <div className="grid-layout">
             <div>
@@ -125,6 +144,10 @@ export default function Slug({ article }) {
             </div>
           </div>
         )}
+
+        <div className="text-justify text-3xl font-bold mb-4 mt-6">
+          {documentToReactComponents(quote)}
+        </div>
 
         {section3Image && (
           <div className="grid-layout">
@@ -142,7 +165,6 @@ export default function Slug({ article }) {
           </div>
         )}
 
-
         {section4aImage && (
           <div className="grid-layout">
             <div>
@@ -155,6 +177,114 @@ export default function Slug({ article }) {
             </div>
             <div className="text-justify">
               {documentToReactComponents(section4Text)}
+            </div>
+          </div>
+        )}
+
+        <div className="text-justify text-3xl font-bold mb-4 mt-6">
+          {documentToReactComponents(secondQuote)}
+        </div>
+
+        {section5Image && (
+          <div className="grid-layout">
+            <div className="text-justify">
+              {documentToReactComponents(section5Text)}
+            </div>
+            <div>
+              <Image
+                src={`https:${section5Image.fields.file.url}`}
+                width={600}
+                height={600}
+                alt={section5altTag}
+              />
+            </div>
+          </div>
+        )}
+
+        {section6Image && (
+          <div className="grid-layout">
+            <div>
+              <Image
+                src={`https:${section6Image.fields.file.url}`}
+                width={600}
+                height={600}
+                alt={section6AltTag}
+              />
+            </div>
+            <div className="text-justify">
+              {documentToReactComponents(section6Text)}
+            </div>
+          </div>
+        )}
+
+        <div className="text-justify text-3xl font-bold mb-4 mt-6">
+          {documentToReactComponents(thirdQuote)}
+        </div>
+
+        {section7Image && (
+          <div className="grid-layout">
+            <div className="text-justify">
+              {documentToReactComponents(section7Text)}
+            </div>
+            <div>
+              <Image
+                src={`https:${section7Image.fields.file.url}`}
+                width={600}
+                height={600}
+                alt={section7ImageAltTag}
+              />
+            </div>
+          </div>
+        )}
+
+        {section8Image && (
+          <div className="grid-layout">
+            <div>
+              <Image
+                src={`https:${section8Image.fields.file.url}`}
+                width={600}
+                height={600}
+                alt={section8ImageAltTag}
+              />
+            </div>
+            <div className="text-justify">
+              {documentToReactComponents(section8Text)}
+            </div>
+          </div>
+        )}
+
+        <div className="text-justify text-3xl font-bold mb-4 mt-6">
+          {documentToReactComponents(fourthQuote)}
+        </div>
+
+        {section9Image && (
+          <div className="grid-layout">
+            <div className="text-justify">
+              {documentToReactComponents(section9Text)}
+            </div>
+            <div>
+              <Image
+                src={`https:${section9Image.fields.file.url}`}
+                width={600}
+                height={600}
+                alt={section9ImageAltTag}
+              />
+            </div>
+          </div>
+        )}
+
+        {section10Image && (
+          <div className="grid-layout">
+            <div>
+              <Image
+                src={`https:${section10Image.fields.file.url}`}
+                width={600}
+                height={600}
+                alt={section10ImageAltTag}
+              />
+            </div>
+            <div className="text-justify">
+              {documentToReactComponents(section10Text)}
             </div>
           </div>
         )}
