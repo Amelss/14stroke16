@@ -32,12 +32,13 @@ export async function getStaticProps({ params }) {
 
   return {
     props: { article: items[0] || null },
+    revalidate: 10
   };
 }
 
 export default function Slug({ article }) {
   if (!article) {
-    // Handle the case where the article is not found
+  
     return <div>Article not found</div>;
   }
 
@@ -97,7 +98,7 @@ export default function Slug({ article }) {
           </div>
         </div>
 
-        {/* Check if section2Image is present before rendering */}
+       
         {section2Image && (
           <div className="grid-layout">
             <div>
@@ -114,7 +115,6 @@ export default function Slug({ article }) {
           </div>
         )}
 
-        {/* Check if section3Image is present before rendering */}
         {section3Image && (
           <div className="grid-layout">
             <div className="text-justify">
@@ -131,7 +131,7 @@ export default function Slug({ article }) {
           </div>
         )}
 
-        {/* Check if section4aImage is present before rendering */}
+
         {section4aImage && (
           <div className="grid-layout">
             <div>
