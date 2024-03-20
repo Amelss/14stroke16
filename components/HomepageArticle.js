@@ -93,7 +93,7 @@ export default function HomepageArticle({ article }) {
           </div>
         </div>
 
-        <div className="text-center text-3xl font-bold my-4">
+        <div className="text-center text-3xl font-bold  my-10 py-6 px-3 md:py-10">
           {documentToReactComponents(quote)}
         </div>
 
@@ -126,7 +126,7 @@ export default function HomepageArticle({ article }) {
           </div>
         )}
 
-        <div className="text-center text-3xl font-bold my-4">
+        <div className="text-center text-3xl font-bold my-10 py-6 px-3 md:py-10">
           {documentToReactComponents(secondQuote)}
         </div>
 
@@ -162,7 +162,7 @@ export default function HomepageArticle({ article }) {
           </div>
         )}
 
-        <div className="text-center text-3xl font-bold my-4">
+        <div className="text-center text-3xl font-bold my-10 py-6 px-3 md:py-10">
           {documentToReactComponents(thirdQuote)}
         </div>
 
@@ -198,7 +198,7 @@ export default function HomepageArticle({ article }) {
           </div>
         )}
 
-        <div className="text-center text-3xl font-bold my-4">
+        <div className="text-center text-3xl font-bold my-10 py-6 px-3 md:py-10">
           {documentToReactComponents(fourthQuote)}
         </div>
 
