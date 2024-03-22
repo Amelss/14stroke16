@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .grid-layout{
-    @apply grid grid-cols-1 md:grid-cols-2 gap-10 mt-10
+    @apply grid grid-cols-1 gap-y-5 md:px-6 md:grid-cols-2 md:gap-5 lg:gap-10 mt-10 overflow-x-hidden
 }
 p {
   white-space: pre-wrap;

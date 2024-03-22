@@ -46,7 +46,7 @@ export default function HomepageArticle({ article }) {
   } = article.fields;
 
   return (
-    <div className="px-5 md:px-0 md:max-w-[1200px] mx-auto my-10">
+    <div className="px-3 md:px-0 md:max-w-[1200px] mx-auto my-10">
       <div>
         <div className="">
           <div className="grid-layout">
@@ -59,7 +59,7 @@ export default function HomepageArticle({ article }) {
 
             <div className="">
               <Link href={`/articles/${slug}`}>
-                <h3 className="text-4xl md:text-6xl font-bold text-center mb-4 md:mt-0 uppercase">
+                <h3 className="text-4xl xl:text-6xl font-bold text-center mb-4 md:mt-0 uppercase">
                   {title}
                 </h3>
               </Link>
