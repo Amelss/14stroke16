@@ -19,7 +19,7 @@ export default function Footer() {
         </div>
 
         <Image
-          src={"/logo_svg.svg"}
+          src={"/logo-2.svg"}
           width={220}
           height={220}
           alt="Company Logo"
