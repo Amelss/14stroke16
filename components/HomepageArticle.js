@@ -6,6 +6,7 @@ export default function HomepageArticle({ article }) {
   const {
     title,
     readTime,
+    plugSocket,
     slug,
     author,
     articlePublishedDate,
@@ -69,7 +70,7 @@ export default function HomepageArticle({ article }) {
 
               <div className="flex justify-between align-bottom mt-10">
                 <div>
-                  <p className="font-bold text-xs text-gray-300">{author}</p>
+                  <p className="font-bold text-xs text-gray-300 cursor-pointer"><Link href={`${plugSocket}`} target="blank">{author}</Link></p>
                 </div>
                 <div>
                   <p className="font-bold text-xs text-gray-300">{articlePublishedDate}</p>
@@ -93,9 +94,12 @@ export default function HomepageArticle({ article }) {
           </div>
         </div>
 
-        <div className="text-center text-3xl font-bold  my-10 py-6 px-3 md:py-10">
+        {quote && (
+           <div className="text-center text-3xl font-bold  my-10 py-6 px-3 md:py-10">
           {documentToReactComponents(quote)}
         </div>
+        )}
+       
 
         <div className="grid-layout">
           <div className="text-justify">
@@ -126,9 +130,12 @@ export default function HomepageArticle({ article }) {
           </div>
         )}
 
-        <div className="text-center text-3xl font-bold my-10 py-6 px-3 md:py-10">
+        {secondQuote && (
+          <div className="text-center text-3xl font-bold my-10 py-6 px-3 md:py-10">
           {documentToReactComponents(secondQuote)}
         </div>
+        )}
+        
 
         {section5Image && (
           <div className="grid-layout">
@@ -161,10 +168,12 @@ export default function HomepageArticle({ article }) {
             </div>
           </div>
         )}
-
-        <div className="text-center text-3xl font-bold my-10 py-6 px-3 md:py-10">
+        {thirdQuote && (
+          <div className="text-center text-3xl font-bold my-10 py-6 px-3 md:py-10">
           {documentToReactComponents(thirdQuote)}
         </div>
+  )}
+        
 
         {section7Image && (
           <div className="grid-layout">
@@ -198,9 +207,12 @@ export default function HomepageArticle({ article }) {
           </div>
         )}
 
-        <div className="text-center text-3xl font-bold my-10 py-6 px-3 md:py-10">
+        {fourthQuote && (
+          <div className="text-center text-3xl font-bold my-10 py-6 px-3 md:py-10">
           {documentToReactComponents(fourthQuote)}
         </div>
+        )}
+        
 
         {section9Image && (
           <div className="grid-layout">

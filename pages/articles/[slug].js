@@ -1,6 +1,7 @@
 import { createClient } from "contentful";
 import Image from "next/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import Link from "next/link";
 import Skeleton from "@/components/Skeleton";
 
 const client = createClient({
@@ -57,6 +58,7 @@ export default function Slug({ article }) {
     title,
     readTime,
     author,
+    plugSocket,
     articlePublishedDate,
     featuredImage,
     featuredImageAltTag,
@@ -122,7 +124,9 @@ export default function Slug({ article }) {
                   <p className="font-bold text-xs text-gray-300">{author}</p>
                 </div>
                 <div>
-                  <p className="font-bold text-xs text-gray-300">{articlePublishedDate}</p>
+                  <p className="font-bold text-xs text-gray-300">
+                    {articlePublishedDate}
+                  </p>
                 </div>
               </div>
             </div>
@@ -145,9 +149,11 @@ export default function Slug({ article }) {
           </div>
         )}
 
-        <div className="text-center text-3xl font-bold my-10 py-6 px-3 md:py-10">
-          {documentToReactComponents(quote)}
-        </div>
+        {quote && (
+          <div className="text-center text-3xl font-bold  my-10 py-6 px-3 md:py-10">
+            {documentToReactComponents(quote)}
+          </div>
+        )}
 
         {section3Image && (
           <div className="grid-layout">
@@ -181,9 +187,11 @@ export default function Slug({ article }) {
           </div>
         )}
 
-        <div className="text-center text-3xl font-bold my-10 py-6 px-3 md:py-10">
-          {documentToReactComponents(secondQuote)}
-        </div>
+        {secondQuote && (
+          <div className="text-center text-3xl font-bold my-10 py-6 px-3 md:py-10">
+            {documentToReactComponents(secondQuote)}
+          </div>
+        )}
 
         {section5Image && (
           <div className="grid-layout">
@@ -217,9 +225,11 @@ export default function Slug({ article }) {
           </div>
         )}
 
-        <div className="text-center text-3xl font-bold my-10 py-6 px-3 md:py-10">
-          {documentToReactComponents(thirdQuote)}
-        </div>
+        {thirdQuote && (
+          <div className="text-center text-3xl font-bold my-10 py-6 px-3 md:py-10">
+            {documentToReactComponents(thirdQuote)}
+          </div>
+        )}
 
         {section7Image && (
           <div className="grid-layout">
@@ -253,9 +263,11 @@ export default function Slug({ article }) {
           </div>
         )}
 
-        <div className="text-center text-3xl font-bold my-10 py-6 px-3 md:py-10">
-          {documentToReactComponents(fourthQuote)}
-        </div>
+        {fourthQuote && (
+          <div className="text-center text-3xl font-bold my-10 py-6 px-3 md:py-10">
+            {documentToReactComponents(fourthQuote)}
+          </div>
+        )}
 
         {section9Image && (
           <div className="grid-layout">
