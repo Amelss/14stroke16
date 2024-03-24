@@ -69,10 +69,10 @@ export default function HomepageArticle({ article }) {
 
               <div className="flex justify-between align-bottom mt-10">
                 <div>
-                  <p className="font-bold">{author}</p>
+                  <p className="font-bold text-xs text-gray-300">{author}</p>
                 </div>
                 <div>
-                  <p className="font-bold">{articlePublishedDate}</p>
+                  <p className="font-bold text-xs text-gray-300">{articlePublishedDate}</p>
                 </div>
               </div>
             </div>
