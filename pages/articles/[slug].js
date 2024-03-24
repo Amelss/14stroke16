@@ -130,7 +130,7 @@ export default function Slug({ article }) {
                       )}
                     </p>
                   ) : (
-                    <p className="font-bold text-xs text-gray-300 cursor-pointer">
+                    <p className="font-bold text-xs text-gray-300">
                       {author}
                     </p>
                   )}
