@@ -109,7 +109,7 @@ export default function Slug({ article }) {
             )}
 
             <div className="">
-              <h3 className="text-4xl md:text-6xl font-bold text-center mb-4 md:mt-0 uppercase">
+              <h3 className="text-4xl xl:text-6xl font-bold text-center mb-4 md:mt-0 uppercase">
                 {title}
               </h3>
 
@@ -145,7 +145,7 @@ export default function Slug({ article }) {
           </div>
         )}
 
-        <div className="text-center text-3xl font-bold mb-4 mt-6">
+        <div className="text-center text-3xl font-bold my-10 py-6 px-3 md:py-10">
           {documentToReactComponents(quote)}
         </div>
 
@@ -181,7 +181,7 @@ export default function Slug({ article }) {
           </div>
         )}
 
-        <div className="text-center text-3xl font-bold mb-4 mt-6">
+        <div className="text-center text-3xl font-bold my-10 py-6 px-3 md:py-10">
           {documentToReactComponents(secondQuote)}
         </div>
 
@@ -217,7 +217,7 @@ export default function Slug({ article }) {
           </div>
         )}
 
-        <div className="text-center text-3xl font-bold mb-4 mt-6">
+        <div className="text-center text-3xl font-bold my-10 py-6 px-3 md:py-10">
           {documentToReactComponents(thirdQuote)}
         </div>
 
@@ -253,7 +253,7 @@ export default function Slug({ article }) {
           </div>
         )}
 
-        <div className="text-center text-3xl font-bold mb-4 mt-6">
+        <div className="text-center text-3xl font-bold my-10 py-6 px-3 md:py-10">
           {documentToReactComponents(fourthQuote)}
         </div>
 
