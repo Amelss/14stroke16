@@ -121,7 +121,19 @@ export default function Slug({ article }) {
 
               <div className="flex justify-between align-bottom mt-10">
                 <div>
-                  <p className="font-bold text-xs text-gray-300">{author}</p>
+                  {plugSocket ? (
+                    <p className="font-bold text-xs text-gray-300 cursor-pointer">
+                      {plugSocket && (
+                        <Link href={`${plugSocket}`} target="blank">
+                          {author}
+                        </Link>
+                      )}
+                    </p>
+                  ) : (
+                    <p className="font-bold text-xs text-gray-300 cursor-pointer">
+                      {author}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <p className="font-bold text-xs text-gray-300">
