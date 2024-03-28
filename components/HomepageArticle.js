@@ -44,6 +44,7 @@ export default function HomepageArticle({ article }) {
     secondQuote,
     thirdQuote,
     fourthQuote,
+    credits
   } = article.fields;
 
   return (
@@ -79,9 +80,7 @@ export default function HomepageArticle({ article }) {
                       )}
                     </p>
                   ) : (
-                    <p className="font-bold text-xs text-gray-300">
-                      {author}
-                    </p>
+                    <p className="font-bold text-xs text-gray-300">{author}</p>
                   )}
                 </div>
                 <div>
@@ -255,6 +254,10 @@ export default function HomepageArticle({ article }) {
             </div>
           </div>
         )}
+
+        <div className="text-center mt-10 pt-5 text-sm text-gray-300">
+          {documentToReactComponents(credits)}
+        </div>
       </div>
     </div>
   );
