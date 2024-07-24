@@ -1,4 +1,4 @@
-import { createClient } from "contentful";
+import * as contentful from "@/utils/contentful";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
@@ -6,52 +6,41 @@ import Skeleton from "@/components/Skeleton";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import PreviewBanner from "@/components/PreviewBanner";
 
-const client = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_KEY,
-});
-
-const previewClient = contentful.createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_PREVIEW_ACCESS_KEY,
-  host: "preview.contentful.com",
-});
-
 export const getStaticPaths = async () => {
-  const res = await client.getEntries({
+  const res = await contentful.client.getEntries({
     content_type: "article",
   });
 
-  const paths = res.items.map((item) => {
-    return {
-      params: { slug: item.fields.slug },
-    };
-  });
+  const paths = res.items.map((item) => ({
+    params: { slug: item.fields.slug },
+  }));
 
   return {
     paths,
-    fallback: true,
+    fallback: true, 
   };
 };
 
-export async function getStaticProps({ context }) {
-
-  const client = context.preview
-    ? contentful.previewClient
-    : contentful.client;
+export async function getStaticProps(context) {
+  const client = context.preview ? contentful.previewClient : contentful.client;
 
   const { items } = await client.getEntries({
     content_type: "article",
     "fields.slug": context.params.slug,
   });
 
+  if (!items.length) {
+    return {
+      notFound: true, 
+    };
+  }
 
   return {
     props: {
       preview: context.preview || false,
       article: items[0] || null,
     },
-    revalidate: 10,
+    revalidate: 10, 
   };
 }
 
@@ -90,7 +79,7 @@ export default function Slug({ article, preview }) {
               alt={featuredImageAltTag}
             />
           )}
-          <div className="">
+          <div>
             <h3 className="text-4xl xl:text-6xl font-bold text-center mb-4 md:mt-0 uppercase">
               {title}
             </h3>
@@ -102,11 +91,9 @@ export default function Slug({ article, preview }) {
               <div>
                 {plugSocket ? (
                   <p className="font-bold text-xs text-gray-300 cursor-pointer">
-                    {plugSocket && (
-                      <Link href={`${plugSocket}`} target="blank">
-                        {author}
-                      </Link>
-                    )}
+                    <Link href={`${plugSocket}`} target="_blank">
+                      {author}
+                    </Link>
                   </p>
                 ) : (
                   <p className="font-bold text-xs text-gray-300">{author}</p>
@@ -146,7 +133,7 @@ export default function Slug({ article, preview }) {
                   </div>
                 )}
               {section.sys.contentType.sys.id === "quoteBlock" && (
-                <div className="text-center text-3xl font-bold  my-10 py-6 px-3 md:py-10">
+                <div className="text-center text-3xl font-bold my-10 py-6 px-3 md:py-10">
                   {section.fields.quoteBlockText}
                 </div>
               )}
