@@ -3,6 +3,7 @@ import Image from "next/image";
 import Skeleton from "@/components/Skeleton";
 import Head from "next/head";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import PreviewBanner from "@/components/PreviewBanner";
 
 export default function HomepageArticle({ article }) {
   if (!article) return <Skeleton />;

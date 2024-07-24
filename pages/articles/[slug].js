@@ -4,10 +4,17 @@ import Link from "next/link";
 import Head from "next/head";
 import Skeleton from "@/components/Skeleton";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import PreviewBanner from "@/components/PreviewBanner";
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+});
+
+const previewClient = contentful.createClient({
+  space: process.env.CONTENTFUL_SPACE_ID,
+  accessToken: process.env.CONTENTFUL_PREVIEW_ACCESS_KEY,
+  host: "preview.contentful.com",
 });
 
 export const getStaticPaths = async () => {
@@ -27,20 +34,28 @@ export const getStaticPaths = async () => {
   };
 };
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ context }) {
+
+  const client = context.preview
+    ? contentful.previewClient
+    : contentful.client;
+
   const { items } = await client.getEntries({
     content_type: "article",
-    "fields.slug": params.slug,
+    "fields.slug": context.params.slug,
   });
 
 
   return {
-    props: { article: items[0] || null },
+    props: {
+      preview: context.preview || false,
+      article: items[0] || null,
+    },
     revalidate: 10,
   };
 }
 
-export default function Slug({ article }) {
+export default function Slug({ article, preview }) {
   if (!article) return <Skeleton />;
 
   const {
@@ -64,6 +79,7 @@ export default function Slug({ article }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      {preview && <PreviewBanner />}
       <div className="px-5 md:px-0 md:max-w-[1200px] mx-auto my-10">
         <div className="grid-layout">
           {featuredImage && (
