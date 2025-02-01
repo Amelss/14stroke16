@@ -13,7 +13,7 @@ export default function ArticleCard({ article }) {
     excerpt,
   } = article.fields;
     return (
-      <div className="masonry-item">
+      <div className="masonry-item py-3">
         <div>
           <Link href={`articles/${slug}`}>
             <Image
@@ -39,10 +39,10 @@ export default function ArticleCard({ article }) {
 
 
           </div>
-          <p className="text-sm md:text-md ">{excerpt}</p>
+          {/* <p className="text-sm md:text-md ">{excerpt}</p>
           <Link href={`articles/${slug}`}>
             <p className="text-sm pb-4 mt-4 font-bold">READ MORE</p>
-          </Link>
+          </Link> */}
         </div>
       </div>
     );
