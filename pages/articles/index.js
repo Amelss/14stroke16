@@ -23,8 +23,11 @@ export async function getStaticProps() {
 }
 
 export default function viewAll({articles}) {
-    return (
+  return (
+    <div>
+   
       <div className="container mx-auto mt-10 px-3">
+        <h1 className="text-2xl font-bold py-6">FEATURES</h1>
         <MasonryGrid>
           {articles.map((article) => (
             <div key={article.sys.id} className="masonry-item">
@@ -33,6 +36,7 @@ export default function viewAll({articles}) {
           ))}
         </MasonryGrid>
       </div>
-    );
+    </div>
+  );
   
 }

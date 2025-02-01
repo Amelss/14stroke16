@@ -27,7 +27,7 @@ export default function Home({articles}) {
   return (
     <div>
       <div>
-        {articles.slice(0,1).map((article) => (
+        {articles.slice(0,9).map((article) => (
           <HomepageArticle key={article.sys.id} article={article} />
         ))}
       </div>
