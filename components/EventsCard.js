@@ -8,7 +8,7 @@ export default function EventsCard({ newEvent }) {
     eventsThumbnail,
     eventDate,
     eventLink,
-    eventDescription,
+    eventDescription
   } = newEvent.fields;
   return (
     <div className="masonry-item py-3">

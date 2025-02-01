@@ -10,7 +10,7 @@ export async function getStaticProps() {
 
   const res = await client.getEntries({
     content_type: "events",
-    order: "sys.createdAt"
+    order: "sys.createdAt",
   });
 
   return {
@@ -23,12 +23,14 @@ export async function getStaticProps() {
 
 export default function EventsHome({ event }) {
   return (
-    <div>
-      <div className="container mx-auto mt-10 px-3">
-        <h1 className="text-2xl font-bold py-6">UPCOMING EVENTS</h1>
+    <div className="flex flex-col min-h-screen">
+      <div className="container mx-auto mt-10 px-3 flex-grow flex items-center justify-center">
+        {/* Centered "No upcoming events" message */}
         {event.length === 0 ? (
           <div className="text-center py-6">
-            <h1 className="text-2xl font-bold py-6">NO UPCOMING EVENTS</h1>
+            <h1 className="text-2xl font-bold text-gray-400">
+              THERE ARE NO UPCOMING EVENTS
+            </h1>
           </div>
         ) : (
           <MasonryGrid>
