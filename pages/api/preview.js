@@ -6,5 +6,6 @@ export default function handler(req, res) {
   }
   res.setPreviewData({});
   res.redirect(`/articles/${slug}`)
-  res.redirect(`/community/${slug}`);
+  res.redirect(`/community/${slug}`)
+  res.redirect(`/events/${slug}`);
 }

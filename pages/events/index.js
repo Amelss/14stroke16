@@ -25,7 +25,7 @@ export default function EventsHome({ event }) {
   return (
     <div className="flex flex-col min-h-screen">
       <div className="container mx-auto mt-10 px-3 flex-grow flex items-center justify-center">
-        {/* Centered "No upcoming events" message */}
+      
         {event.length === 0 ? (
           <div className="text-center py-6">
             <h1 className="text-2xl font-bold text-gray-400">
