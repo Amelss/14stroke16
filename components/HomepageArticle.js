@@ -4,7 +4,6 @@ import Skeleton from "@/components/Skeleton";
 import Head from "next/head";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-
 export default function HomepageArticle({ article }) {
   if (!article) return <Skeleton />;
 
@@ -19,7 +18,8 @@ export default function HomepageArticle({ article }) {
     credits,
     introductionText,
     blogSections,
-    excerpt
+    excerpt,
+    slug
   } = article.fields;
 
   return (
@@ -31,70 +31,71 @@ export default function HomepageArticle({ article }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="px-1 md:px-0 md:max-w-[1200px] mx-auto my-10">
-        <div className="grid-layout">
-          <div className="px-1">
-            <h3 className="text-4xl xl:text-6xl font-bold text-center mb-4 md:mt-0 uppercase md:hidden">
-              {title}
-            </h3>
-            <div className="flex justify-between align-bottom py-3 xl:hidden">
-              <div>
-                {plugSocket ? (
-                  <p className="text-xs text-black cursor-pointer">
-                    <Link href={`${plugSocket}`} target="_blank">
-                      {author}
-                    </Link>
-                  </p>
-                ) : (
-                  <p className="text-xs text-black">{author}</p>
-                )}
-              </div>
-              <div>
-                <p className="text-xs text-black">{readTime} mins</p>
-              </div>
+        <div className="px-1 relative">
+          {/* <div className="flex justify-between align-bottom py-3">
+            <div>
+              {plugSocket ? (
+                <p className="text-xs text-black cursor-pointer">
+                  <Link href={`${plugSocket}`} target="_blank">
+                    {author}
+                  </Link>
+                </p>
+              ) : (
+                <p className="text-xs text-black">{author}</p>
+              )}
             </div>
-            {featuredImage && (
+            <div>
+              <p className="text-xs text-black">{readTime} mins</p>
+            </div>
+          </div> */}
+          <Link href={`articles/${slug}`}>
+          {featuredImage && (
+            <div className="relative">
               <Image
                 src={`https:${featuredImage.fields.file.url}`}
                 width={600}
                 height={600}
                 alt={featuredImageAltTag}
+                className="w-full h-auto"
               />
-            )}
-          </div>
-
-          <div className="px-4">
-            <h3 className="hidden md:block text-4xl xl:text-6xl font-bold text-center mb-4 md:mt-0 uppercase">
-              {title}
-            </h3>
-            
-
-            {/* <div className="leading-relaxed whitespace-pre-wrap text-sm xl:text-base text-body mt-10">
-              {introductionText}
-            </div> */}
-            <div className="hidden xl:flex justify-between align-bottom mt-10">
-              <div>
-                {plugSocket ? (
-                  <p className="font-bold text-xs text-gray-300 cursor-pointer">
-                    {plugSocket && (
-                      <Link href={`${plugSocket}`} target="blank">
-                        {author}
-                      </Link>
-                    )}
-                  </p>
-                ) : (
-                  <p className="font-bold text-xs text-gray-300">{author}</p>
-                )}
-              </div>
-              <div>
-                <p className="font-bold text-xs text-gray-300">
-                  {articlePublishedDate}
-                </p>
+              <div className="absolute bottom-0 bg-black bg-opacity-15 p-2">
+                <h3 className="text-white text-3xl font-bold uppercase">
+                  {title}
+                </h3>
               </div>
             </div>
-          </div>
+          )}
+          </Link>
+          
         </div>
 
-        <p className="text-sm md:text-md px-3 ">{excerpt}</p>
+        <div className="px-4">
+          {/* <div className="leading-relaxed whitespace-pre-wrap text-sm xl:text-base text-body mt-10">
+            {introductionText}
+          </div> */}
+          {/* <div className="hidden xl:flex justify-between align-bottom mt-10">
+            <div>
+              {plugSocket ? (
+                <p className="font-bold text-xs text-gray-300 cursor-pointer">
+                  {plugSocket && (
+                    <Link href={`${plugSocket}`} target="blank">
+                      {author}
+                    </Link>
+                  )}
+                </p>
+              ) : (
+                <p className="font-bold text-xs text-gray-300">{author}</p>
+              )}
+            </div>
+            <div>
+              <p className="font-bold text-xs text-gray-300">
+                {articlePublishedDate}
+              </p>
+            </div>
+          </div> */}
+        </div>
+
+        {/* <p className="text-sm md:text-md px-3 ">{excerpt}</p> */}
         {/* <div className="rich-text text-justify md:px-6 md:gap-5 lg:gap-10 mt-10 overflow-x-hidden">
           {blogSections.map((section, index) => (
             <div key={index}>

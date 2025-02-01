@@ -6,23 +6,19 @@ import { useState } from "react";
 
 
 export default function Header() {
+  const [isOpen, setOpen] = useState(false);
 
-    const [isOpen, setOpen] = useState(false);
+  const handleIsOpen = () => {
+    setOpen(!isOpen);
+  };
 
-    const handleIsOpen = () => {
-      setOpen(!isOpen);
-    };
-
-    const closeSideBar = () => {
-      setOpen(false);
-    };
-
-
-
+  const closeSideBar = () => {
+    setOpen(false);
+  };
 
   return (
-    <div className="flex justify-between  md:mx-0 bg-white sticky top-0">
-      <div className="">
+    <div className="flex justify-between md:mx-0 bg-white sticky top-0 z-50 ">
+      <div>
         <Menu left isOpen={isOpen} onOpen={handleIsOpen} onClose={handleIsOpen}>
           <Link href={"/"} onClick={closeSideBar}>
             Home

@@ -1,5 +1,6 @@
 import { createClient } from "contentful";
 import HomepageArticle from "@/components/HomepageArticle";
+import MasonryGrid from "@/components/MasonryGrid";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -27,9 +28,11 @@ export default function Home({articles}) {
   return (
     <div>
       <div>
-        {articles.slice(0,9).map((article) => (
-          <HomepageArticle key={article.sys.id} article={article} />
-        ))}
+        <MasonryGrid>
+          {articles.slice(0, 9).map((article) => (
+            <HomepageArticle key={article.sys.id} article={article} />
+          ))}
+        </MasonryGrid>
       </div>
     </div>
   );
