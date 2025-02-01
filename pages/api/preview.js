@@ -5,5 +5,6 @@ export default function handler(req, res) {
     return res.status(401).json({ message: "Invalid token" });
   }
   res.setPreviewData({});
-  res.redirect(`/articles/${slug}`);
+  res.redirect(`/articles/${slug}`)
+  res.redirect(`/community/${slug}`);
 }
