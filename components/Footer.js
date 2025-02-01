@@ -42,7 +42,7 @@ export default function Footer() {
       </div>
       <div>
         <p className="mt-2 text-center text-xs text-gray-400">
-          &copy; 2024 14STROKE16 MAGAZINE
+          &copy; 2025 14STROKE16 MAGAZINE
         </p>
       </div>
     </div>

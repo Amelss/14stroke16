@@ -11,6 +11,7 @@ export async function getStaticProps() {
 
   const res = await client.getEntries({
     content_type: "community",
+    order: "-sys.createdAt"
   });
 
   return {

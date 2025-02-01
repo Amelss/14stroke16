@@ -38,10 +38,6 @@ export default function CommunityCard({ communityArticle }) {
             <p className="text-xs text-black">{communityReadTime} mins</p>
           </div>
         </div>
-        {/* <p className="text-sm md:text-md ">{excerpt}</p>
-          <Link href={`articles/${slug}`}>
-            <p className="text-sm pb-4 mt-4 font-bold">READ MORE</p>
-          </Link> */}
       </div>
     </div>
   );
