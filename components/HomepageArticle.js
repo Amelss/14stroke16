@@ -94,7 +94,7 @@ export default function HomepageArticle({ article }) {
           </div>
         </div>
 
-        <p className="text-sm md:text-md ">{excerpt}</p>
+        <p className="text-sm md:text-md px-3 ">{excerpt}</p>
         {/* <div className="rich-text text-justify md:px-6 md:gap-5 lg:gap-10 mt-10 overflow-x-hidden">
           {blogSections.map((section, index) => (
             <div key={index}>
