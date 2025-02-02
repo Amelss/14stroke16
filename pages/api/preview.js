@@ -8,4 +8,5 @@ export default function handler(req, res) {
   res.redirect(`/articles/${slug}`)
   res.redirect(`/community/${slug}`)
   res.redirect(`/events/${slug}`);
+  res.redirect(`/gallery/${slug}`);
 }

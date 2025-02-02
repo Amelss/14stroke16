@@ -66,7 +66,6 @@ export default function GallerySlug({ galleryItem, preview }) {
 
       <div className="flex-grow">
         <div className="masonry-item py-3 px-2">
-          <div className="">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-x-2 md:px-5">
               {galleryImages.map((section, index) => (
                 <div key={index}>
@@ -90,8 +89,9 @@ export default function GallerySlug({ galleryItem, preview }) {
                 </div>
               ))}
             </div>
-          </div>
+          
         </div>
+        <p className="text-center text-xs text-gray-400 py-5">{galleryCredits }</p>
       </div>
     </div>
   );
