@@ -23,7 +23,7 @@ export async function getStaticProps() {
 }
 
 
-export default function GalleryHome() {
+export default function GalleryHome({galleryItems}) {
   return (
     <div>
       <div className="container mx-auto mt-10 px-3">
