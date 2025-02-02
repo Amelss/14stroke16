@@ -14,7 +14,11 @@ module.exports = {
       },
       fontFamily: {
         sans: ["var(--font-einaFont)"]
+      },
+      colors: {
+        ivoryWhite: '#FCFEF2'
       }
+
      
     },
   },

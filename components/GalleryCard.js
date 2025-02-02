@@ -9,9 +9,7 @@ const {
     galleryImageTitle,
     slug,
     galleryThumbnail,
-    galleryThumbnailAltTag,
-    galleryImages,
-    galleryCredits
+    galleryThumbnailAltTag
 } = galleryItem.fields
     
     

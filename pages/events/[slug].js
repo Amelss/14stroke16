@@ -64,7 +64,6 @@ export default function events({ newEvent, preview }) {
       </Head>
       {preview && <PreviewBanner />}
 
-      {/* Main Content - Takes Remaining Space */}
       <div className="flex-grow">
         <div className="masonry-item py-3 px-3">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 md:px-10">

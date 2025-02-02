@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div className="mb-4 mt-20">
-      <div className="flex justify-center align-center  ">
+    <div className=" mt-20">
+      <div className="flex justify-center align-center">
         <div>
           <Link
             href={`https://www.instagram.com/14stroke16?igsh=MXQyejNkZHV2cWYzMw==`}
@@ -42,7 +42,7 @@ export default function Footer() {
         </div>
       </div>
       <div>
-        <p className="mt-2 text-center text-xs text-gray-400">
+        <p className="mt-2 text-center text-xs pb-5 text-gray-400">
           &copy; {new Date().getFullYear()} 14STROKE16 MAGAZINE
         </p>
       </div>

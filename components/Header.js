@@ -15,8 +15,7 @@ export default function Header() {
   };
 
   return (
-    <div className="bg-white sticky top-0 z-50 flex justify-between align-center">
-    
+    <div className="bg-ivoryWhite sticky top-0 z-50 flex justify-between align-center">
       <Menu
         className="fixed top-0 left-0"
         isOpen={isOpen}
