@@ -35,12 +35,12 @@ export default function Header() {
           <Link href={"/gallery"} onClick={closeSideBar}>
             Gallery
           </Link>
-          <Link href={"/get-involved"} onClick={closeSideBar}>
+          {/* <Link href={"/get-involved"} onClick={closeSideBar}>
             Get Involved
           </Link>
           <Link href={"/contact"} onClick={closeSideBar}>
             Contact
-          </Link>
+          </Link> */}
         </Menu>
       </div>
       <div className="md:hidden pt-5 pb-3 px-4">
