@@ -1,6 +1,7 @@
 import { createClient } from "contentful";
 import HomepageArticle from "@/components/HomepageArticle";
 import MasonryGrid from "@/components/MasonryGrid";
+import Head from "next/head";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -27,6 +28,15 @@ export default function Home({articles}) {
 
   return (
     <div>
+      <Head>
+        <title>14STROKE16 | HOME </title>
+        <meta
+          name="description"
+          content={`COMMUNITY DIARY. FASHION, ART, CULTURE`}
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div>
         <MasonryGrid>
           {articles.slice(0, 9).map((article) => (
