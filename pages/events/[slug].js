@@ -87,7 +87,7 @@ export default function events({ newEvent, preview }) {
               <Link href={eventLink} target="_blank">
                 <p className="text-base pb-4 font-bold">TICKETS</p>
               </Link>
-              <p className="text-sm md:text-md">{eventDescription}</p>
+              <p className="text-base md:text-md">{eventDescription}</p>
             </div>
           </div>
         </div>

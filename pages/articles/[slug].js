@@ -129,7 +129,7 @@ export default function Slug({ article, preview }) {
           {blogSections.map((section, index) => (
             <div key={index}>
               {section.sys.contentType.sys.id === "textBlock" && (
-                <div className="leading-relaxed whitespace-pre-wrap text-sm xl:text-base text-body mt-5">
+                <div className="leading-relaxed whitespace-pre-wrap text-base xl:text-xl text-body mt-5">
                   {section.fields.textBlockText}
                 </div>
               )}
