@@ -94,6 +94,12 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
+  position: fixed !important;  
+  top: 0;
+  left: 0;
+  width: 100vw;  
+  height: 100vh; 
+  z-index: 9999;
 }
 
 @media screen and (max-width: 800px) {

@@ -45,17 +45,17 @@ export async function getStaticProps(context) {
 
 export default function events({ newEvent, preview }) {
   if (!newEvent) return <Skeleton />;
-    const {
-      eventsTitle,
-      slug,
-      eventsThumbnail,
-      eventDate,
-      eventLink,
-      eventDescription,
-    } = newEvent.fields;
-  
+  const {
+    eventsTitle,
+    slug,
+    eventsThumbnail,
+    eventDate,
+    eventLink,
+    eventDescription,
+  } = newEvent.fields;
+
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Head>
         <title>{eventsTitle}</title>
         <meta name="description" content={`Read about ${eventsTitle}`} />
@@ -64,28 +64,38 @@ export default function events({ newEvent, preview }) {
       </Head>
       {preview && <PreviewBanner />}
 
-      <div className="masonry-item py-3 px-3">
-        <div>
-          <Link href={eventLink} target="_blank">
-          
-          <h3 className="text-lg md:text-md font-bold mt-4 mb-4 uppercase">
-            {eventsTitle}
-          </h3>
-          <Image
-            src={`https:${eventsThumbnail.fields.file.url}`}
-            width={500}
-            height={600}
-            alt={"Event Flyer"}
-          />
- </Link>
-          <p className="text-xs text-black py-3">{eventDate}</p>
-         
-          <Link href={eventLink} target="_blank">
-            <p className="text-base pb-4 font-bold">TICKETS</p>
-          </Link>
-          <p className="text-sm md:text-md ">{eventDescription}</p>
+      {/* Main Content - Takes Remaining Space */}
+      <div className="flex-grow">
+        <div className="masonry-item py-3 px-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 md:px-10">
+            <div>
+              <Link href={eventLink} target="_blank">
+                <h3 className="text-lg md:text-md font-bold mt-4 mb-4 uppercase">
+                  {eventsTitle}
+                </h3>
+              </Link>
+              <Link href={eventLink} target="_blank">
+                <Image
+                  src={`https:${eventsThumbnail.fields.file.url}`}
+                  width={500}
+                  height={600}
+                  alt={"Event Flyer"}
+                />
+              </Link>
+            </div>
+            <div className="py-5">
+              <p className="text-xs text-black pb-2">{eventDate}</p>
+              <Link href={eventLink} target="_blank">
+                <p className="text-base pb-4 font-bold">TICKETS</p>
+              </Link>
+              <p className="text-sm md:text-md">{eventDescription}</p>
+            </div>
+          </div>
         </div>
       </div>
+
+    
     </div>
   );
 }
+

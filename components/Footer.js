@@ -7,7 +7,8 @@ export default function Footer() {
       <div className="flex justify-center align-center  ">
         <div>
           <Link
-            href={`https://www.instagram.com/14stroke16?igsh=MXQyejNkZHV2cWYzMw==`} target="blank"
+            href={`https://www.instagram.com/14stroke16?igsh=MXQyejNkZHV2cWYzMw==`}
+            target="blank"
           >
             <Image
               src={"/instagram-logo.png"}
@@ -42,7 +43,7 @@ export default function Footer() {
       </div>
       <div>
         <p className="mt-2 text-center text-xs text-gray-400">
-          &copy; 2025 14STROKE16 MAGAZINE
+          &copy; {new Date().getFullYear()} 14STROKE16 MAGAZINE
         </p>
       </div>
     </div>
