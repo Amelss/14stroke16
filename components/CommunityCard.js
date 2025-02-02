@@ -9,7 +9,6 @@ export default function CommunityCard({ communityArticle }) {
     slug,
     communityThumbnail,
     CommunityThumbnailAltTag,
-    communitySection,
     communityArticlePublishedDate,
     communityReadTime,
   } = communityArticle.fields;
