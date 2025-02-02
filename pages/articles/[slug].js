@@ -103,7 +103,7 @@ export default function Slug({ article, preview }) {
             <h3 className=" hidden xl:block text-4xl xl:text-6xl font-bold text-center mb-4 md:mt-0 uppercase">
               {title}
             </h3>
-            <div className="leading-relaxed whitespace-pre-wrap text-sm xl:text-base text-body mt-10">
+            <div className="leading-relaxed whitespace-pre-wrap text-base xl:text-base text-body mt-10">
               {introductionText}
             </div>
             <div className="hidden xl:flex justify-between align-bottom mt-10">
