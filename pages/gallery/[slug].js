@@ -57,8 +57,8 @@ export default function GallerySlug({ galleryItem, preview }) {
   return (
     <div className="flex flex-col min-h-screen">
       <Head>
-        <title>{galleryImageTitle}</title>
-        <meta name="description" content={`Read about ${galleryImageTitle}`} />
+        <title>{galleryImageTitle }</title>
+        <meta name="description" content={`14STROKE16 GALLERY`} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

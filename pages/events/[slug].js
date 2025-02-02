@@ -57,8 +57,8 @@ export default function events({ newEvent, preview }) {
   return (
     <div className="flex flex-col min-h-screen">
       <Head>
-        <title>{eventsTitle}</title>
-        <meta name="description" content={`Read about ${eventsTitle}`} />
+        <title>{eventsTitle} </title>
+        <meta name="description" content={`14STROKE16 EVENTS`} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

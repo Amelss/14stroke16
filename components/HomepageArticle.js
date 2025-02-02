@@ -25,8 +25,8 @@ export default function HomepageArticle({ article }) {
   return (
     <div>
       <Head>
-        <title>14STROKE16</title>
-        <meta name="description" content={`Read about ${title}`} />
+        <title>14STROKE16 | HOME </title>
+        <meta name="description" content={`COMMUNITY DIARY. FASHION, ART, CULTURE`} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
