@@ -47,7 +47,6 @@ export default function events({ newEvent, preview }) {
   if (!newEvent) return <Skeleton />;
   const {
     eventsTitle,
-    slug,
     eventsThumbnail,
     eventDate,
     eventLink,
