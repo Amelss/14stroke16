@@ -31,30 +31,26 @@ export default function EventsHome({ event }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex flex-col min-h-screen">
-        <div className="container mx-auto mt-10 px-3 flex-grow flex items-center justify-center">
-          {event.length === 0 ? (
-            <div className="text-center py-6">
-              <h1 className="text-2xl font-bold text-gray-400">
-                THERE ARE NO UPCOMING EVENTS
-              </h1>
-            </div>
-          ) : (
-            <div
-              className={`grid ${
-                event.length === 1
-                  ? "grid-cols-1 max-w-lg"
-                  : "grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
-              } w-full`}
-            >
+      <div className="container mx-auto mt-10 px-3">
+        <h1 className="text-2xl font-bold py-6">EVENTS</h1>
+
+        {event.length === 0 ? (
+          <div className="text-center py-6 h-screen">
+            <h1 className="text-2xl font-bold text-gray-400">
+              THERE ARE NO UPCOMING EVENTS
+            </h1>
+          </div>
+        ) : (
+          <div>
+            <MasonryGrid>
               {event.map((newEvent) => (
-                <div key={newEvent.sys.id} className="w-full">
+                <div key={newEvent.sys.id}>
                   <EventsCard newEvent={newEvent} />
                 </div>
               ))}
-            </div>
-          )}
-        </div>
+            </MasonryGrid>
+          </div>
+        )}
       </div>
     </div>
   );
