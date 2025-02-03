@@ -51,7 +51,7 @@ export default function events({ newEvent, preview }) {
     eventsThumbnail,
     eventDate,
     eventLink,
-    eventDescription,
+    eventDescription
   } = newEvent.fields;
 
   return (
@@ -92,8 +92,6 @@ export default function events({ newEvent, preview }) {
           </div>
         </div>
       </div>
-
-    
     </div>
   );
 }

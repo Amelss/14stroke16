@@ -40,13 +40,19 @@ export default function EventsHome({ event }) {
               </h1>
             </div>
           ) : (
-            <MasonryGrid>
+            <div
+              className={`grid ${
+                event.length === 1
+                  ? "grid-cols-1 max-w-lg"
+                  : "grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+              } w-full`}
+            >
               {event.map((newEvent) => (
-                <div key={newEvent.sys.id} className="masonry-item">
+                <div key={newEvent.sys.id} className="w-full">
                   <EventsCard newEvent={newEvent} />
                 </div>
               ))}
-            </MasonryGrid>
+            </div>
           )}
         </div>
       </div>
