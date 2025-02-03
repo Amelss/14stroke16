@@ -36,7 +36,7 @@ export default function EventsHome({ event }) {
 
         {event.length === 0 ? (
           <div className="text-center py-6 h-screen">
-            <h1 className="text-2xl font-bold text-gray-400">
+            <h1 className="text-2xl font-bold text-gray-500">
               THERE ARE NO UPCOMING EVENTS
             </h1>
           </div>
