@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import Layout from "@/components/Layout";
 import localFont from 'next/font/local'
+import Script from "next/script"; 
 
 const einaFont = localFont({
   src: [
@@ -47,6 +48,22 @@ const einaFont = localFont({
 export default function App({ Component, pageProps }) {
   return (
     <main className={`${einaFont.variable} font-sans bg-ivoryWhite`}>
+      {/* <!-- Google tag (gtag.js) --> */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-QF8VZ70KH8"
+        strategy="afterInteractive"
+      />
+
+      {/* Initialize GA4 with your config */}
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QF8VZ70KH8');
+  `}
+      </Script>
+
       <Layout>
         <Component {...pageProps} />
       </Layout>
