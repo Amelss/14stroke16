@@ -34,8 +34,8 @@ p {
   position: fixed;
   width: 25px;
   height: 20px;
-  left: 36px;
-  top: 36px;
+  right: 36px;
+  top: 40px;
 }
 
 /* Color/shape of burger icon bars */
@@ -66,6 +66,11 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .bm-menu-wrap {
   position: fixed;
   height: 100%;
+  width: 100vw !important;
+  height: 100vh !important;
+  top: 0 !important;
+  left: 0 !important;
+  overflow: hidden;
 }
 
 /* General sidebar styles */
@@ -73,6 +78,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   background: black;
   padding: 1.3em  0;
   font-size: 1.7em;
+ 
 }
 
 /* Morph shape necessary with bubble or elastic */
@@ -96,7 +102,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   background: rgba(0, 0, 0, 0.3);
   position: fixed !important;  
   top: 0;
-  left: 0;
+  right: 0;
   width: 100vw;  
   height: 100vh; 
   z-index: 9999;
@@ -104,8 +110,14 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 @media screen and (max-width: 800px) {
   .bm-burger-button { 
-    left: 20px;
+    right: 20px;
+    top: 30px;
   }
+
+  body.menu-open {
+  overflow: hidden;
+  height: 100vh;
+}
   
 
 }
