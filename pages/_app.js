@@ -1,7 +1,8 @@
 import "@/styles/globals.css";
 import Layout from "@/components/Layout";
 import localFont from 'next/font/local'
-import Script from "next/script"; 
+import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 
 const einaFont = localFont({
   src: [
@@ -67,6 +68,7 @@ export default function App({ Component, pageProps }) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
+      <Analytics />
     </main>
   );
 }
