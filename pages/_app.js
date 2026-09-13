@@ -47,12 +47,22 @@ const einaFont = localFont({
   variable: "--font-einaFont",
 });
 
+export function reportWebVitals(metric) {
+  window.gtag?.("event", metric.name, {
+    value: Math.round(metric.name === "CLS" ? metric.value * 1000 : metric.value),
+    metric_id: metric.id,
+    metric_value: metric.value,
+    metric_rating: metric.rating,
+    non_interaction: true,
+  });
+}
+
 export default function App({ Component, pageProps }) {
   return (
     <main className={`${einaFont.variable} font-sans bg-ivoryWhite`}>
       {/* <!-- Google tag (gtag.js) --> */}
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-QF8VZ70KH8"
+        src="https://www.googletagmanager.com/gtag/js?id=G-6G2T8LT049"
         strategy="afterInteractive"
       />
 
@@ -62,7 +72,7 @@ export default function App({ Component, pageProps }) {
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-QF8VZ70KH8');
+    gtag('config', 'G-6G2T8LT049');
   `}
       </Script>
 
